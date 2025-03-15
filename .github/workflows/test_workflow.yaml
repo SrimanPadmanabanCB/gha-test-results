@@ -15,5 +15,5 @@ jobs:
         with:
           test-type: GO
           folder-path: report.xml
-          cloudbees-url: ${{ vars.CBP_PREPROD_URL }}
+          cloudbees-url: ${{ secrets.CBP_PREPROD_URL }}
           cloudbees-pat: ${{ secrets.CBP_GHA_PAT }}
