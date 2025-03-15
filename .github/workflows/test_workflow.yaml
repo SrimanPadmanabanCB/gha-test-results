@@ -9,14 +9,13 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Run My Custom Go Action
         uses: ./
         with:
-          name: "custom-action"
-          version: 1.0.1
-          url: "ghcr.io/srimanpadmanabancb/gha-action/custom-action:latest"
-          digest: "test"
-          type: "docker"
+          test-type: GO
+          folder-path: testdata/reports.xml
           cloudbees-url: ${{ vars.CBP_PREPROD_URL }}
           cloudbees-pat: ${{ secrets.CBP_GHA_PAT }}
