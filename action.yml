@@ -23,3 +23,6 @@ runs:
     CLOUDBEES_API_TOKEN: ${{ inputs.cloudbees-pat }}
     TEST_TYPE: ${{ inputs.test-type }}
     FOLDER_PATH: ${{ inputs.folder-path }}
+  credentials:
+    username: "${{ secrets.GHCR_USERNAME }}"
+    password: "${{ secrets.GHCR_TOKEN }}"
