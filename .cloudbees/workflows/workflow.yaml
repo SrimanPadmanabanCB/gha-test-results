@@ -13,52 +13,52 @@ jobs:
       - name: checkout-source-code
         uses: cloudbees-io/checkout@v1
       - name: Run My Custom Go Action for GO
-        uses: cloudbees-io/publish-test-results-private@SrimanPadmanabanCB-patch-1
+        uses: cloudbees-io/publish-test-results@v1
         with:
           test-type: GO
           folder-name: test_data/go/*
       - name: Run My Custom Go Action for JEST
-        uses: cloudbees-io/publish-test-results-private@SrimanPadmanabanCB-patch-1
+        uses: cloudbees-io/publish-test-results@v1
         with:
           test-type: JEST
           folder-name: test_data/jest/nextgen-ui/*
       - name: Run My Custom Go Action for JMeter
-        uses: cloudbees-io/publish-test-results-private@SrimanPadmanabanCB-patch-1
+        uses: cloudbees-io/publish-test-results@v1
         with:
           test-type: JMETER
           folder-name: test_data/jmeter/*        
       - name: Run My Custom Go Action for Junit
-        uses: cloudbees-io/publish-test-results-private@SrimanPadmanabanCB-patch-1
+        uses: cloudbees-io/publish-test-results@v1
         with:
           test-type: JUNIT
           folder-name: test_data/junit/*
       - name: Run My Custom Go Action for MSTEST
-        uses: cloudbees-io/publish-test-results-private@SrimanPadmanabanCB-patch-1
+        uses: cloudbees-io/publish-test-results@v1
         with:
           test-type: MSTEST
           folder-name: test_data/mstest/*         
       - name: Run My Custom Go Action for PLAYWRIGHT
-        uses: cloudbees-io/publish-test-results-private@SrimanPadmanabanCB-patch-1
+        uses: cloudbees-io/publish-test-results@v1
         with:
           test-type: PLAYWRIGHT
           folder-name: test_data/playwright/* 
       - name: Run My Custom Go Action for PRODPERFECT
-        uses: cloudbees-io/publish-test-results-private@SrimanPadmanabanCB-patch-1
+        uses: cloudbees-io/publish-test-results@v1
         with:
           test-type: PRODPERFECT
           folder-name: test_data/prod_perfect/*
       - name: Run My Custom Go Action for SELENIUM
-        uses: cloudbees-io/publish-test-results-private@SrimanPadmanabanCB-patch-1
+        uses: cloudbees-io/publish-test-results@v1
         with:
           test-type: SELENIUM
           folder-name: test_data/selenium/reports/*
       - name: Run My Custom Go Action for TESTNG
-        uses: cloudbees-io/publish-test-results-private@SrimanPadmanabanCB-patch-1
+        uses: cloudbees-io/publish-test-results@v1
         with:
           test-type: TESTNG
           folder-name: test_data/testng/*
       - name: Run My Custom Go Action for TOSCA
-        uses: cloudbees-io/publish-test-results-private@SrimanPadmanabanCB-patch-1
+        uses: cloudbees-io/publish-test-results@v1
         with:
           test-type: TOSCA
           folder-name: test_data/tosca/*         
