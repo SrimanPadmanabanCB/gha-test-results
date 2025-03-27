@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          repository: https://github.com/apache/commons-lang
+          repository: apache/commons-lang
       - name: Run Tests with Maven
         run: mvn test
         
