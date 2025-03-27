@@ -15,12 +15,14 @@ jobs:
         with:
           repository: apache/commons-lang
       - name: Run Tests with Maven
-        run: mvn test
-        
+        run: |
+          mvn test -Dtest=StringUtilsTest
+          ls -lrt
+          cd apache/commons-lang
       # - name: Run My Custom Go Action for GO
       #   uses: cloudbees-gha-cbp/publish-test-results@main
       #   with:
-      #     test-type: GO
-      #     folder-path: test_data/go/*
+      #     test-type: JUNIT
+      #     folder-path: /
       #     cloudbees-url: ${{ secrets.CBP_PREPROD_URL }}
       #     cloudbees-pat: ${{ secrets.CBP_GHA_PAT }}
