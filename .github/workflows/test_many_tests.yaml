@@ -1,0 +1,26 @@
+name: Test My Go Action
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  
+jobs:
+  run-go-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          repository: apache/commons-lang
+      - name: Run Tests with Maven
+        run: |
+          mvn test
+      - name: Run My Custom Go Action for GO
+        uses: cloudbees-gha-cbp/publish-test-results@main
+        with:
+          test-type: JUNIT
+          folder-path: target/surefire-reports/*
+          cloudbees-url: ${{ secrets.CBP_PREPROD_URL }}
+          cloudbees-pat: ${{ secrets.CBP_GHA_PAT }}
