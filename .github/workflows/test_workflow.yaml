@@ -18,11 +18,10 @@ jobs:
         run: |
           mvn test -Dtest=StringUtilsTest
           ls -lrt
-          cd apache/commons-lang
-      # - name: Run My Custom Go Action for GO
-      #   uses: cloudbees-gha-cbp/publish-test-results@main
-      #   with:
-      #     test-type: JUNIT
-      #     folder-path: /
-      #     cloudbees-url: ${{ secrets.CBP_PREPROD_URL }}
-      #     cloudbees-pat: ${{ secrets.CBP_GHA_PAT }}
+      - name: Run My Custom Go Action for GO
+        uses: cloudbees-gha-cbp/publish-test-results@main
+        with:
+          test-type: JUNIT
+          folder-path: target/*
+          cloudbees-url: ${{ secrets.CBP_PREPROD_URL }}
+          cloudbees-pat: ${{ secrets.CBP_GHA_PAT }}
