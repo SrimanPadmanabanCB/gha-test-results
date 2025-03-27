@@ -12,74 +12,15 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
-
-      - name: Run My Custom Go Action for GO
-        uses: cloudbees-gha-cbp/publish-test-results@main
         with:
-          test-type: GO
-          folder-path: test_data/go/*
-          cloudbees-url: ${{ secrets.CBP_PREPROD_URL }}
-          cloudbees-pat: ${{ secrets.CBP_GHA_PAT }}
-      - name: Run My Custom Go Action for JEST
-        uses: cloudbees-gha-cbp/publish-test-results@main
-        with:
-          test-type: JEST
-          folder-path: test_data/jest/nextgen-ui/*
-          cloudbees-url: ${{ secrets.CBP_PREPROD_URL }}
-          cloudbees-pat: ${{ secrets.CBP_GHA_PAT }}
-      - name: Run My Custom Go Action for JMeter
-        uses: cloudbees-gha-cbp/publish-test-results@main
-        with:
-          test-type: JMETER
-          folder-path: test_data/jmeter/*
-          cloudbees-url: ${{ secrets.CBP_PREPROD_URL }}
-          cloudbees-pat: ${{ secrets.CBP_GHA_PAT }}         
-      - name: Run My Custom Go Action for Junit
-        uses: cloudbees-gha-cbp/publish-test-results@main
-        with:
-          test-type: JUNIT
-          folder-path: test_data/junit/*
-          cloudbees-url: ${{ secrets.CBP_PREPROD_URL }}
-          cloudbees-pat: ${{ secrets.CBP_GHA_PAT }}   
-      - name: Run My Custom Go Action for MSTEST
-        uses: cloudbees-gha-cbp/publish-test-results@main
-        with:
-          test-type: MSTEST
-          folder-path: test_data/mstest/*
-          cloudbees-url: ${{ secrets.CBP_PREPROD_URL }}
-          cloudbees-pat: ${{ secrets.CBP_GHA_PAT }}             
-      - name: Run My Custom Go Action for PLAYWRIGHT
-        uses: cloudbees-gha-cbp/publish-test-results@main
-        with:
-          test-type: PLAYWRIGHT
-          folder-path: test_data/playwright/*
-          cloudbees-url: ${{ secrets.CBP_PREPROD_URL }}
-          cloudbees-pat: ${{ secrets.CBP_GHA_PAT }}   
-      - name: Run My Custom Go Action for PRODPERFECT
-        uses: cloudbees-gha-cbp/publish-test-results@main
-        with:
-          test-type: PRODPERFECT
-          folder-path: test_data/prod_perfect/*
-          cloudbees-url: ${{ secrets.CBP_PREPROD_URL }}
-          cloudbees-pat: ${{ secrets.CBP_GHA_PAT }}  
-      - name: Run My Custom Go Action for SELENIUM
-        uses: cloudbees-gha-cbp/publish-test-results@main
-        with:
-          test-type: SELENIUM
-          folder-path: test_data/selenium/reports/*
-          cloudbees-url: ${{ secrets.CBP_PREPROD_URL }}
-          cloudbees-pat: ${{ secrets.CBP_GHA_PAT }}  
-      - name: Run My Custom Go Action for TESTNG
-        uses: cloudbees-gha-cbp/publish-test-results@main
-        with:
-          test-type: TESTNG
-          folder-path: test_data/testng/*
-          cloudbees-url: ${{ secrets.CBP_PREPROD_URL }}
-          cloudbees-pat: ${{ secrets.CBP_GHA_PAT }}  
-      - name: Run My Custom Go Action for TOSCA
-        uses: cloudbees-gha-cbp/publish-test-results@main
-        with:
-          test-type: TOSCA
-          folder-path: test_data/tosca/*
-          cloudbees-url: ${{ secrets.CBP_PREPROD_URL }}
-          cloudbees-pat: ${{ secrets.CBP_GHA_PAT }}            
+          repository: https://github.com/apache/commons-lang
+      - name: Run Tests with Maven
+        run: mvn test
+        
+      # - name: Run My Custom Go Action for GO
+      #   uses: cloudbees-gha-cbp/publish-test-results@main
+      #   with:
+      #     test-type: GO
+      #     folder-path: test_data/go/*
+      #     cloudbees-url: ${{ secrets.CBP_PREPROD_URL }}
+      #     cloudbees-pat: ${{ secrets.CBP_GHA_PAT }}
