@@ -5,7 +5,7 @@ kind: workflow
 on:
   push:
     branches:
-      - main
+      - test
 
 jobs:
   Junit-Test:
