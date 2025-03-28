@@ -1,4 +1,4 @@
-name: Test My Go Action
+name: Test My Go Action for many tests
 
 on:
   push:
