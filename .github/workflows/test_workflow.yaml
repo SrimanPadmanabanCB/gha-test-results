@@ -19,7 +19,7 @@ jobs:
           mvn test -Dtest=StringUtilsTest
           ls -lrt
       - name: Run My Custom Go Action for GO
-        uses: gha/testgha/test-action@main
+        uses: cloudbees-gha-cbp/publish-test-results@main
         with:
           test-type: JUNIT
           folder-path: target/surefire-reports/*
