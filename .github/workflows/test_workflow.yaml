@@ -22,6 +22,6 @@ jobs:
         uses: cloudbees-io-gha/publish-test-results@v1
         with:
           test-type: JUNIT
-          folder-path: target/surefire-reports/*
+          results-path: target/surefire-reports/*
           cloudbees-url: ${{ secrets.CBP_PREPROD_URL }}
           cloudbees-pat: ${{ secrets.CBP_GHA_PAT }}
